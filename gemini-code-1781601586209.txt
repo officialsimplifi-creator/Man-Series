@@ -1,0 +1,16 @@
+man-series-theme/
+├── assets/
+│   ├── style.css           <-- Paste your existing style.css code directly here
+│   └── app.js              <-- Paste your existing JavaScript logic + the AJAX code snippet here
+├── config/
+│   ├── settings_schema.json <-- Create an empty file with a base open array block: []
+│   └── settings_data.json   <-- Create an empty file with a base open object wrapper: {}
+├── layout/
+│   └── theme.liquid        <-- Paste the Layout code block provided above here
+├── sections/
+│   ├── header.liquid       <-- Paste the Header code block provided above here
+│   ├── footer.liquid       <-- Paste the Footer code block provided above here
+│   ├── hero-banner.liquid   <-- Paste the Hero code block provided above here
+│   └── featured-catalog.liquid <-- Paste the Product Catalog code block provided above here
+└── templates/
+    └── index.json          <-- Paste the Index JSON structure configuration map block here

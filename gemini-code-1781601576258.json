@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "headline_normal": "Fewer Products.",
+        "headline_italic": "Healthier Skin.",
+        "subheading": "Science-backed multi-functional skincare formulated for Indian men. 3 products. Transparent actives."
+      }
+    },
+    "products_catalog": {
+      "type": "featured-catalog",
+      "settings": {
+        "watermark_text": "THE ESSENTIALS",
+        "eyebrow_text": "THE SERIES",
+        "section_title": "Three Products. One Complete Routine."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "products_catalog"
+  ]
+}

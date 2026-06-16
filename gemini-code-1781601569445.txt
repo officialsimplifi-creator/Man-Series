@@ -1,0 +1,37 @@
+<section class="hero" id="hero" style="background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');">
+  {% if section.settings.cta_link != blank %}
+    <a href="{{ section.settings.cta_link }}" class="hero-clickable-overlay" aria-label="{{ section.settings.cta_text }}"></a>
+  {% endif %}
+  
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>
+          <span class="line-normal hero-line">{{ section.settings.headline_normal }}</span>
+          <span class="line-italic hero-line">{{ section.settings.headline_italic }}</span>
+        </h1>
+        <p class="hero-desc hero-line">{{ section.settings.subheading }}</p>
+        {% if section.settings.cta_link != blank %}
+          <div class="hero-actions hero-line">
+            <a href="{{ section.settings.cta_link }}" class="btn btn-hero-cta">{{ section.settings.cta_text | upcase }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Cover Banner",
+  "settings": [
+    { "type": "image_picker", "id": "bg_image", "label": "Hero Background Image Fill" },
+    { "type": "text", "id": "headline_normal", "label": "Headline Primary Text", "default": "Fewer Products." },
+    { "type": "text", "id": "headline_italic", "label": "Headline Italic Accent Text", "default": "Healthier Skin." },
+    { "type": "textarea", "id": "subheading", "label": "Subheadline Text Block" },
+    { "type": "url", "id": "cta_link", "label": "Primary Click Redirect URL" },
+    { "type": "text", "id": "cta_text", "label": "Button Action Label", "default": "Shop Now" }
+  ],
+  "presets": [{ "name": "Hero Cover Banner" }]
+}
+{% endschema %}

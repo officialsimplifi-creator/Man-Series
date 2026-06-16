@@ -1,0 +1,74 @@
+<footer>
+  <div class="container">
+    <div class="recognition-strip-footer">
+      <h3 class="recognition-title">RECOGNIZED BY</h3>
+      <div class="recognition-logos">
+        {% if section.settings.rec_logo_1 != blank %}
+          <img src="{{ section.settings.rec_logo_1 | image_url: width: 150 }}" alt="Recognition 1" class="recognition-logo-img">
+        {% endif %}
+        {% if section.settings.rec_logo_2 != blank %}
+          <img src="{{ section.settings.rec_logo_2 | image_url: width: 150 }}" alt="Recognition 2" class="recognition-logo-img">
+        {% endif %}
+        {% if section.settings.rec_logo_3 != blank %}
+          <img src="{{ section.settings.rec_logo_3 | image_url: width: 150 }}" alt="Recognition 3" class="recognition-logo-img">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        {% if section.settings.footer_logo != blank %}
+          <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" alt="{{ shop.name }}" class="footer-logo" style="height: 36px; margin-bottom: 1.5rem;">
+        {% endif %}
+        <p>{{ section.settings.brand_bio }}</p>
+        <div class="footer-manifesto">"{{ section.settings.manifesto }}"</div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          {% for link in linklists[section.settings.explore_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          {% for link in linklists[section.settings.quick_links_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Connect</h4>
+        <p>{{ section.settings.connect_text }}</p>
+        <p><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</p>
+      <p>Formulated for Indian Men · Made in India <span role="img" aria-label="India Flag">🇮🇳</span></p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer Section",
+  "settings": [
+    { "type": "image_picker", "id": "footer_logo", "label": "Footer Brand Logo" },
+    { "type": "text", "id": "brand_bio", "label": "Brand Brief Bio", "default": "Clinically proven, active skincare simplified for Indian Men." },
+    { "type": "text", "id": "manifesto", "label": "Brand Manifesto Tagline", "default": "Formulated for Indian Men" },
+    { "type": "link_list", "id": "explore_menu", "label": "Explore Menu Column" },
+    { "type": "link_list", "id": "quick_links_menu", "label": "Quick Links Column" },
+    { "type": "textarea", "id": "connect_text", "label": "Connect Column Content" },
+    { "type": "image_picker", "id": "rec_logo_1", "label": "Government / Incubation Logo 1" },
+    { "type": "image_picker", "id": "rec_logo_2", "label": "Government / Incubation Logo 2" },
+    { "type": "image_picker", "id": "rec_logo_3", "label": "Government / Incubation Logo 3" }
+  ]
+}
+{% endschema %}
